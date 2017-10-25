@@ -3,7 +3,6 @@ var fs = bluebird.promisifyAll(require('fs'))
 var request = bluebird.promisifyAll(require('request'))
 
 getCapcha()
-//login('cml_hawke0@163.com', 'kaze131021', 'sr6p');
 function getCapcha() {
   return request.getAsync('https://www.zhihu.com/captcha.gif?r=' + new Date().getTime(), {encoding: 'binary'}).then(function (data) {
     var response = data[0]
